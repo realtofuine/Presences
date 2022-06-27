@@ -190,6 +190,14 @@ presence.on("UpdateData", async () => {
 				presenceData.state = `${repository.owner}/${repository.name}`;
 			}
 			break;
+		
+		case pathname.includes("/features"):
+			presenceData.details = "Browsing features";
+			if (pathname.includes("copilot")) {
+				presenceData.state = "Looking at Github Copilot";
+			}
+			break;
+
 		case !!document.querySelector<HTMLHeadingElement>(
 			"#js-pjax-container > div > header > div.container-xl.pt-4.pt-lg-0.p-responsive.clearfix > div > div.flex-1 > h1"
 		):
